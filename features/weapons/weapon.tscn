@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://weapon001"]
+
+[ext_resource type="Script" path="res://features/weapons/weapon.gd" id="1_weapon"]
+[ext_resource type="PackedScene" path="res://features/weapons/bullet.tscn" id="2_bullet"]
+
+[node name="Weapon" type="Node2D"]
+script = ExtResource("1_weapon")
+bullet_scene = ExtResource("2_bullet")
+
+[node name="Barrel" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(2, -3, 30, -3, 30, 3, 2, 3)
+color = Color(0.7, 0.7, 0.8, 1.0)
+
+[node name="Muzzle" type="Node2D" parent="."]
+position = Vector2(32, 0)

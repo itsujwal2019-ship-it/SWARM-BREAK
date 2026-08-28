@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://hud001"]
+
+[ext_resource type="Script" path="res://ui/hud/hud.gd" id="1_hud"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hud")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 0
+
+[node name="HealthBar" type="ProgressBar" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 24)
+size_flags_vertical = 4
+value = 100.0
+show_percentage = false
+
+[node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightVBox" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TimeLabel" type="Label" parent="MarginContainer/HBoxContainer/RightVBox"]
+layout_mode = 2
+text = "TIME: 00:00"
+horizontal_alignment = 2
+
+[node name="KillsLabel" type="Label" parent="MarginContainer/HBoxContainer/RightVBox"]
+layout_mode = 2
+text = "KILLS: 0"
+horizontal_alignment = 2

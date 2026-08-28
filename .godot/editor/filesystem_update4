@@ -1,0 +1,8 @@
+res://features/weapons/bullet.tscn
+res://features/weapons/weapon.gd
+res://features/enemies/basic_enemy.tscn
+res://features/game/game.gd
+res://features/player/player.gd
+res://features/weapons/bullet.gd
+res://ui/hud/hud.gd
+res://features/weapons/weapon.tscn
