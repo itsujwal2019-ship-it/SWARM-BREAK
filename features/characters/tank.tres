@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CharacterDefinition" format=3 uid="uid://chartk001"]
+
+[ext_resource type="Script" path="res://features/characters/character_definition.gd" id="1_def"]
+[ext_resource type="Script" path="res://features/abilities/shield.gd" id="2_shield"]
+[ext_resource type="Script" path="res://features/abilities/taunt.gd" id="3_taunt"]
+
+[sub_resource type="Resource" id="Resource_shield"]
+script = ExtResource("2_shield")
+ability_name = "Shield"
+cooldown = 15.0
+shield_amount = 100.0
+duration = 5.0
+
+[sub_resource type="Resource" id="Resource_taunt"]
+script = ExtResource("3_taunt")
+ability_name = "Taunt"
+cooldown = 12.0
+effect_range = 400.0
+duration = 4.0
+
+[resource]
+script = ExtResource("1_def")
+character_id = "tank"
+display_name = "Tank"
+role = 0
+max_health = 500.0
+movement_speed = 180.0
+ability_1 = SubResource("Resource_shield")
+ability_2 = SubResource("Resource_taunt")

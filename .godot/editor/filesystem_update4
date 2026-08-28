@@ -6,3 +6,14 @@ res://features/player/player.gd
 res://features/weapons/bullet.gd
 res://ui/hud/hud.gd
 res://features/weapons/weapon.tscn
+res://features/combat/health_component.gd
+res://features/enemies/basic_enemy.gd
+res://features/abilities/area_heal.gd
+res://features/abilities/area_explosion.gd
+res://features/abilities/freeze_area.gd
+res://features/abilities/heal_over_time.gd
+res://features/abilities/taunt.gd
+res://features/abilities/ability.gd
+res://features/combat/status_effect_component.gd
+res://ui/hud/hud.tscn
+res://features/abilities/fireball_projectile.tscn

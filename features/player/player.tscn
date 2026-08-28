@@ -3,6 +3,8 @@
 [ext_resource type="Script" path="res://features/player/player.gd" id="1_player"]
 [ext_resource type="Script" path="res://features/combat/health_component.gd" id="2_health"]
 [ext_resource type="Script" path="res://features/weapons/weapon_holder.gd" id="3_holder"]
+[ext_resource type="Script" path="res://features/abilities/ability_controller.gd" id="5_controller"]
+[ext_resource type="Script" path="res://features/combat/status_effect_component.gd" id="6_status"]
 [ext_resource type="PackedScene" path="res://features/weapons/weapon.tscn" id="4_weapon"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1"]
@@ -41,3 +43,9 @@ script = ExtResource("3_holder")
 
 [node name="Weapon" parent="WeaponHolder" instance=ExtResource("4_weapon")]
 position = Vector2(20, 0)
+
+[node name="AbilityController" type="Node" parent="."]
+script = ExtResource("5_controller")
+
+[node name="StatusEffectComponent" type="Node" parent="."]
+script = ExtResource("6_status")

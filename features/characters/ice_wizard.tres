@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="CharacterDefinition" format=3 uid="uid://chariw001"]
+
+[ext_resource type="Script" path="res://features/characters/character_definition.gd" id="1_def"]
+[ext_resource type="Script" path="res://features/abilities/ice_projectile.gd" id="2_ice"]
+[ext_resource type="Script" path="res://features/abilities/freeze_area.gd" id="3_freeze"]
+
+[sub_resource type="Resource" id="Resource_ice"]
+script = ExtResource("2_ice")
+ability_name = "Ice Projectile"
+cooldown = 2.0
+damage = 25.0
+speed = 650.0
+lifetime = 2.5
+slow_duration = 3.0
+
+[sub_resource type="Resource" id="Resource_freeze"]
+script = ExtResource("3_freeze")
+ability_name = "Freeze Area"
+cooldown = 10.0
+effect_range = 300.0
+freeze_duration = 3.0
+
+[resource]
+script = ExtResource("1_def")
+character_id = "ice_wizard"
+display_name = "Ice Wizard"
+role = 3
+max_health = 120.0
+movement_speed = 260.0
+ability_1 = SubResource("Resource_ice")
+ability_2 = SubResource("Resource_freeze")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://iceproj001"]
+
+[ext_resource type="Script" path="res://features/abilities/ice_projectile_node.gd" id="1_ice"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 8.0
+
+[node name="IceProjectile" type="Area2D"]
+script = ExtResource("1_ice")
+collision_layer = 4
+collision_mask = 24
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Body" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, -10, 8, 5, -8, 5)
+color = Color(0.4, 0.85, 1.0, 1.0)

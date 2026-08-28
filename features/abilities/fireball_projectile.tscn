@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://fireball001"]
+
+[ext_resource type="Script" uid="uid://cd6mpko8v0p84" path="res://features/weapons/bullet.gd" id="1_bullet"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+
+[node name="FireballProjectile" type="Area2D" unique_id=1725932276]
+scale = Vector2(3, 3)
+collision_layer = 4
+collision_mask = 24
+script = ExtResource("1_bullet")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=274866164]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Body" type="Polygon2D" parent="." unique_id=713227817]
+color = Color(1, 0.45, 0.1, 1)
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)

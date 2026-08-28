@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="CharacterDefinition" format=3 uid="uid://charhl001"]
+
+[ext_resource type="Script" path="res://features/characters/character_definition.gd" id="1_def"]
+[ext_resource type="Script" path="res://features/abilities/area_heal.gd" id="2_heal"]
+[ext_resource type="Script" path="res://features/abilities/heal_over_time.gd" id="3_hot"]
+
+[sub_resource type="Resource" id="Resource_heal"]
+script = ExtResource("2_heal")
+ability_name = "Area Heal"
+cooldown = 8.0
+heal_amount = 30.0
+effect_range = 300.0
+
+[sub_resource type="Resource" id="Resource_hot"]
+script = ExtResource("3_hot")
+ability_name = "Heal Over Time"
+cooldown = 12.0
+heal_per_second = 5.0
+duration = 5.0
+effect_range = 300.0
+
+[resource]
+script = ExtResource("1_def")
+character_id = "healer"
+display_name = "Healer"
+role = 1
+max_health = 100.0
+movement_speed = 280.0
+ability_1 = SubResource("Resource_heal")
+ability_2 = SubResource("Resource_hot")

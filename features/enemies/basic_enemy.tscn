@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://features/enemies/basic_enemy.gd" id="1_enemy"]
 [ext_resource type="Script" path="res://features/combat/health_component.gd" id="2_health"]
 [ext_resource type="Script" path="res://features/combat/hurtbox_component.gd" id="3_hurtbox"]
+[ext_resource type="Script" path="res://features/combat/status_effect_component.gd" id="4_status"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1"]
 radius = 14.0
@@ -34,3 +35,6 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
 shape = SubResource("CircleShape2D_hurtbox")
+
+[node name="StatusEffectComponent" type="Node" parent="."]
+script = ExtResource("4_status")
