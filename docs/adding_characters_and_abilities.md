@@ -325,11 +325,11 @@ Open `features/game/game.gd` and add the path to the `CHARACTER_DEFS` array:
 
 ```gdscript
 const CHARACTER_DEFS := [
-    "res://features/characters/fire_wizard.tres",
-    "res://features/characters/ice_wizard.tres",
-    "res://features/characters/healer.tres",
-    "res://features/characters/tank.tres",
-    "res://features/characters/my_character.tres",  # <-- add here
+	"res://features/characters/fire_wizard.tres",
+	"res://features/characters/ice_wizard.tres",
+	"res://features/characters/healer.tres",
+	"res://features/characters/tank.tres",
+	"res://features/characters/my_character.tres",  # <-- add here
 ]
 ```
 

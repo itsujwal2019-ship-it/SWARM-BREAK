@@ -43,7 +43,6 @@ func _process(delta: float) -> void:
 func _spawn_enemy() -> void:
 	if enemy_scene == null or _player == null:
 		return
-
 	var spawn_pos := _get_spawn_position()
 	var enemy: BasicEnemy = enemy_scene.instantiate()
 	enemy.global_position = spawn_pos

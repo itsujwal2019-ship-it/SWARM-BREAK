@@ -1,51 +1,51 @@
 [gd_scene format=3 uid="uid://player001"]
 
-[ext_resource type="Script" path="res://features/player/player.gd" id="1_player"]
-[ext_resource type="Script" path="res://features/combat/health_component.gd" id="2_health"]
-[ext_resource type="Script" path="res://features/weapons/weapon_holder.gd" id="3_holder"]
-[ext_resource type="Script" path="res://features/abilities/ability_controller.gd" id="5_controller"]
-[ext_resource type="Script" path="res://features/combat/status_effect_component.gd" id="6_status"]
-[ext_resource type="PackedScene" path="res://features/weapons/weapon.tscn" id="4_weapon"]
+[ext_resource type="Script" uid="uid://dcp6pcjw3uk2m" path="res://features/player/player.gd" id="1_player"]
+[ext_resource type="Script" uid="uid://dskik0fjngllc" path="res://features/combat/health_component.gd" id="2_health"]
+[ext_resource type="Script" uid="uid://cldk1cqxm2h25" path="res://features/weapons/weapon_holder.gd" id="3_holder"]
+[ext_resource type="PackedScene" uid="uid://weapon001" path="res://features/weapons/weapon.tscn" id="4_weapon"]
+[ext_resource type="Script" uid="uid://5uoh7mdk0m8u" path="res://features/abilities/ability_controller.gd" id="5_controller"]
+[ext_resource type="Script" uid="uid://cqc88i4irgsnl" path="res://features/combat/status_effect_component.gd" id="6_status"]
+[ext_resource type="Script" uid="uid://bxhef41u2kniv" path="res://features/player/fire_wizard_animator.gd" id="7_fwanim"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1"]
 radius = 16.0
 height = 32.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hurtbox"]
-radius = 18.0
-
-[node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_player")
-collision_layer = 1
+[node name="Player" type="CharacterBody2D" unique_id=435051189]
 collision_mask = 18
+script = ExtResource("1_player")
 
-[node name="Body" type="Polygon2D" parent="."]
+[node name="Body" type="Polygon2D" parent="." unique_id=348851370]
+color = Color(0.2, 0.6, 1, 1)
 polygon = PackedVector2Array(0, -20, 14, 14, 0, 8, -14, 14)
-color = Color(0.2, 0.6, 1.0, 1.0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1648322098]
 shape = SubResource("CapsuleShape2D_1")
 
-[node name="HealthComponent" type="Node" parent="."]
+[node name="HealthComponent" type="Node" parent="." unique_id=932662178]
 script = ExtResource("2_health")
-max_health = 100.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position_smoothing_enabled = true
-position_smoothing_speed = 8.0
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1820386529]
 limit_left = -1984
 limit_top = -1984
 limit_right = 1984
 limit_bottom = 1984
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
 
-[node name="WeaponHolder" type="Node2D" parent="."]
+[node name="WeaponHolder" type="Node2D" parent="." unique_id=124324883]
+visible = false
 script = ExtResource("3_holder")
 
-[node name="Weapon" parent="WeaponHolder" instance=ExtResource("4_weapon")]
+[node name="Weapon" parent="WeaponHolder" unique_id=1246804065 instance=ExtResource("4_weapon")]
 position = Vector2(20, 0)
 
-[node name="AbilityController" type="Node" parent="."]
+[node name="AbilityController" type="Node" parent="." unique_id=1683805789]
 script = ExtResource("5_controller")
 
-[node name="StatusEffectComponent" type="Node" parent="."]
+[node name="StatusEffectComponent" type="Node" parent="." unique_id=848229483]
 script = ExtResource("6_status")
+
+[node name="FireWizardAnimator" type="Node" parent="." unique_id=113288929]
+script = ExtResource("7_fwanim")

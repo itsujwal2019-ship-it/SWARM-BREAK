@@ -8,6 +8,8 @@ signal player_died
 
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var ability_controller: AbilityController = $AbilityController
+@onready var _body: Polygon2D = $Body
+@onready var _fw_animator: FireWizardAnimator = $FireWizardAnimator
 
 func _ready() -> void:
 	add_to_group("player")
@@ -38,6 +40,15 @@ func apply_character(def: CharacterDefinition) -> void:
 	health_component.current_health = def.max_health
 	health_component.shield = 0.0
 	ability_controller.setup(def)
+	_apply_visual(def.character_id)
+
+func _apply_visual(character_id: String) -> void:
+	if character_id == "fire_wizard":
+		_body.hide()
+		_fw_animator.activate()
+	else:
+		_body.show()
+		_fw_animator.deactivate()
 
 func take_damage(amount: float) -> void:
 	health_component.take_damage(amount)
