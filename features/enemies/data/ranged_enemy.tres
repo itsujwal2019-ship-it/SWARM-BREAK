@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyDefinition" format=3]
+
+[ext_resource type="Script" path="res://features/enemies/enemy_definition.gd" id="1_def"]
+
+[resource]
+script = ExtResource("1_def")
+enemy_id = "ranged_enemy"
+display_name = "Ranged"
+max_health = 100.0
+movement_speed = 100.0
+contact_damage = 5.0
+damage_interval = 0.5
+body_scale = 1.0
+body_color = Color(0.4, 0.1, 0.95, 1)
+behavior = 1
+spawn_warning_duration = 0.8
+attack_range = 450.0
+attack_cooldown = 2.0
+projectile_damage = 15.0
+preferred_distance = 280.0

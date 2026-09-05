@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://game001"]
 
-[ext_resource type="Script" path="res://features/game/game.gd" id="1_game"]
-[ext_resource type="PackedScene" path="res://features/player/player.tscn" id="2_player"]
-[ext_resource type="PackedScene" path="res://features/enemies/enemy_spawner.tscn" id="3_spawner"]
-[ext_resource type="PackedScene" path="res://ui/hud/hud.tscn" id="4_hud"]
+[ext_resource type="Script" uid="uid://dykjt5dehh87w" path="res://features/game/game.gd" id="1_game"]
+[ext_resource type="PackedScene" uid="uid://player001" path="res://features/player/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" uid="uid://spawner001" path="res://features/enemies/enemy_spawner.tscn" id="3_spawner"]
+[ext_resource type="PackedScene" uid="uid://hud001" path="res://ui/hud/hud.tscn" id="4_hud"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_top"]
 size = Vector2(4096, 64)
@@ -17,81 +17,79 @@ size = Vector2(64, 4096)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_right"]
 size = Vector2(64, 4096)
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" unique_id=102875949]
 script = ExtResource("1_game")
 
-[node name="Arena" type="Node2D" parent="."]
+[node name="Arena" type="Node2D" parent="." unique_id=138385776]
 
-[node name="Background" type="Polygon2D" parent="Arena"]
+[node name="Background" type="Polygon2D" parent="Arena" unique_id=1262193243]
+color = Color(0.08, 0.08, 0.1, 1)
 polygon = PackedVector2Array(-2048, -2048, 2048, -2048, 2048, 2048, -2048, 2048)
-color = Color(0.08, 0.08, 0.1, 1.0)
 
-[node name="WallTop" type="StaticBody2D" parent="Arena"]
+[node name="WallTop" type="StaticBody2D" parent="Arena" unique_id=1804499884]
 position = Vector2(0, -2048)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/WallTop"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/WallTop" unique_id=1903669654]
 shape = SubResource("RectangleShape2D_top")
 
-[node name="WallBottom" type="StaticBody2D" parent="Arena"]
+[node name="WallBottom" type="StaticBody2D" parent="Arena" unique_id=9150198]
 position = Vector2(0, 2048)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/WallBottom"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/WallBottom" unique_id=1162466740]
 shape = SubResource("RectangleShape2D_bottom")
 
-[node name="WallLeft" type="StaticBody2D" parent="Arena"]
+[node name="WallLeft" type="StaticBody2D" parent="Arena" unique_id=1310936619]
 position = Vector2(-2048, 0)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/WallLeft"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/WallLeft" unique_id=118504484]
 shape = SubResource("RectangleShape2D_left")
 
-[node name="WallRight" type="StaticBody2D" parent="Arena"]
+[node name="WallRight" type="StaticBody2D" parent="Arena" unique_id=984407333]
 position = Vector2(2048, 0)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/WallRight"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/WallRight" unique_id=688660432]
 shape = SubResource("RectangleShape2D_right")
 
-[node name="Enemies" type="Node2D" parent="."]
-groups = ["enemies_container"]
+[node name="Enemies" type="Node2D" parent="." unique_id=176088807]
 
-[node name="Projectiles" type="Node2D" parent="."]
-groups = ["projectiles"]
+[node name="Projectiles" type="Node2D" parent="." unique_id=1479124504]
 
-[node name="Player" parent="." instance=ExtResource("2_player")]
-position = Vector2(0, 0)
+[node name="Player" parent="." unique_id=426307518 instance=ExtResource("2_player")]
 
-[node name="EnemySpawner" parent="." instance=ExtResource("3_spawner")]
+[node name="EnemySpawner" parent="." unique_id=1885639720 instance=ExtResource("3_spawner")]
 
-[node name="HUD" parent="." instance=ExtResource("4_hud")]
+[node name="HUD" parent="." unique_id=1900989333 instance=ExtResource("4_hud")]
 
-[node name="GameOverLayer" type="CanvasLayer" parent="."]
+[node name="GameOverLayer" type="CanvasLayer" parent="." unique_id=202490152]
 layer = 10
 visible = false
 
-[node name="GameOverScreen" type="Control" parent="GameOverLayer"]
+[node name="GameOverScreen" type="Control" parent="GameOverLayer" unique_id=1156260352]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BG" type="ColorRect" parent="GameOverLayer/GameOverScreen"]
-anchors_preset = 15
+[node name="BG" type="ColorRect" parent="GameOverLayer/GameOverScreen" unique_id=1295341019]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0, 0.0, 0.0, 0.75)
+color = Color(0, 0, 0, 0.75)
 
-[node name="VBox" type="VBoxContainer" parent="GameOverLayer/GameOverScreen"]
-anchors_preset = 8
+[node name="VBox" type="VBoxContainer" parent="GameOverLayer/GameOverScreen" unique_id=384254431]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -104,31 +102,31 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="TitleLabel" type="Label" parent="GameOverLayer/GameOverScreen/VBox"]
+[node name="TitleLabel" type="Label" parent="GameOverLayer/GameOverScreen/VBox" unique_id=477553592]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "GAME OVER"
 horizontal_alignment = 1
-theme_override_font_sizes/font_size = 48
 
-[node name="SurvivalLabel" type="Label" parent="GameOverLayer/GameOverScreen/VBox"]
+[node name="SurvivalLabel" type="Label" parent="GameOverLayer/GameOverScreen/VBox" unique_id=1861092145]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "SURVIVED: 00:00"
 horizontal_alignment = 1
-theme_override_font_sizes/font_size = 24
 
-[node name="KillsLabel" type="Label" parent="GameOverLayer/GameOverScreen/VBox"]
+[node name="KillsLabel" type="Label" parent="GameOverLayer/GameOverScreen/VBox" unique_id=123661233]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "KILLS: 0"
 horizontal_alignment = 1
-theme_override_font_sizes/font_size = 24
 
-[node name="Spacer" type="Control" parent="GameOverLayer/GameOverScreen/VBox"]
-layout_mode = 2
+[node name="Spacer" type="Control" parent="GameOverLayer/GameOverScreen/VBox" unique_id=1335003564]
 custom_minimum_size = Vector2(0, 20)
-
-[node name="RestartButton" type="Button" parent="GameOverLayer/GameOverScreen/VBox"]
 layout_mode = 2
-text = "RESTART"
+
+[node name="RestartButton" type="Button" parent="GameOverLayer/GameOverScreen/VBox" unique_id=2094615799]
+layout_mode = 2
 theme_override_font_sizes/font_size = 24
+text = "RESTART"
 
 [connection signal="pressed" from="GameOverLayer/GameOverScreen/VBox/RestartButton" to="." method="_on_restart_pressed"]
